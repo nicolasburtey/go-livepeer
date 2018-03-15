@@ -22,8 +22,8 @@ jobs:
       - checkout
 
       # specify any bash command here prefixed with `run: `
-      - run: install_ffmpeg.sh
+      - run: ./install_ffmpeg.sh
       - run: go get github.com/livepeer/go-livepeer/cmd/livepeer
       - run: go get github.com/golang/glog
       - run: go get github.com/ericxtang/m3u8
-      - run: test.sh
+      - run: ./test.sh
