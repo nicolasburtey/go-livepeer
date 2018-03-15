@@ -3,6 +3,11 @@ set -ex
 export PATH="$HOME/compiled/bin":$PATH
 export PKG_CONFIG_PATH=$HOME/compiled/lib/pkgconfig
 
+if [ ! "$(type automake)" ]; then
+  echo "automake is required for nasm. Install it with sudo apt-get install automake"
+  exit 1
+fi
+
 if [ ! -e "$HOME/nasm/nasm" ]; then
   # sudo apt-get -y install asciidoc xmlto # this fails :(
   git clone -b nasm-2.13.02 http://repo.or.cz/nasm.git "$HOME/nasm"
